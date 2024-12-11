@@ -10,7 +10,7 @@ This project implements a CRUD (Create, Read, Update, Delete) application using 
 - Document indexing and retrieval using ColBERT
 - Web interface for searching documents
 - CRUD operations for document management
-- [Add other key features]
+- Training and evaluation of ColBERT models
 
 ## Prerequisites
 
@@ -70,39 +70,14 @@ curl -X POST http://localhost:5000/index \
      -d @your_documents.json
 ```
 
-## Project Structure
-```
-colbert_v2/
-├── models/         # Core ColBERT models
-├── data/          # Data processing utilities
-├── train/         # Training modules
-└── custom/        # Custom implementations
 
-dataportal/        # Web interface
-├── templates/     # HTML templates
-└── static/        # Static assets
-```
+## Acknowledgments & Credits
 
-## [Optional Sections to Add]
-- Configuration
-- Advanced Usage
-- Performance Metrics
-- Contributing Guidelines
-- Troubleshooting
-- API Documentation
+This project is built using ColBERTv2, an efficient and effective neural search engine:
 
-## About Me
-[Your introduction, background, and why you created this project]
+- Original Paper: ["ColBERTv2: Effective and Efficient Retrieval via Lightweight Late Interaction"](https://arxiv.org/abs/2112.01488)
+- Authors: Omar Khattab, Christopher Potts, and Matei Zaharia
+- Official Repository: [stanford-futuredata/ColBERT](https://github.com/stanford-futuredata/ColBERT)
+- ColBERT-AI Library: [colbert-ai](https://github.com/stanford-futuredata/ColBERT)
 
-## License
-[Your chosen license]
 
-## Acknowledgments
-- ColBERT Team
-- [Other acknowledgments]
-
-## Contact
-- [Your Name]
-- [Your Email/Contact Information]
-- Project Link: [https://github.com/ibohaji/Colbert-Crud-App-ess](https://github.com/ibohaji/Colbert-Crud-App-ess)
-```
