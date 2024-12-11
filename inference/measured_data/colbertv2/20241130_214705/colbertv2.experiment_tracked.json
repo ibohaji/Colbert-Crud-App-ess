@@ -1,0 +1,28 @@
+{
+  "hardware_info": {
+    "device_type": "cpu",
+    "hardware_specs": {
+      "processor": "x86_64",
+      "physical_cores": 32,
+      "total_cores": 32,
+      "max_frequency": "3900.00MHz",
+      "memory_total": "377.07GB",
+      "memory_available": "362.77GB"
+    }
+  },
+  "experiment": {
+    "experiment_name": "colbertv2.experiment",
+    "device": "cpu",
+    "model_name": "ColBERTv2",
+    "retrieval_model": null,
+    "model_dimension": 128,
+    "index_size_mb": 0.0,
+    "model_size_mb": 0.0,
+    "load_time": 0.0,
+    "warmup_time": 0.0,
+    "index_time": 3491.5245413780212,
+    "average_latency": 0.24351312867172628,
+    "throughput": 4.1065547695708595,
+    "average_memory": 0.0
+  }
+}

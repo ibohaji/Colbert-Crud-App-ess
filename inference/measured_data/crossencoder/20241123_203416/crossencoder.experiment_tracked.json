@@ -1,0 +1,28 @@
+{
+  "hardware_info": {
+    "device_type": "cpu",
+    "hardware_specs": {
+      "processor": "AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD",
+      "physical_cores": 8,
+      "total_cores": 16,
+      "max_frequency": "2900.00MHz",
+      "memory_total": "15.42GB",
+      "memory_available": "4.16GB"
+    }
+  },
+  "experiment": {
+    "experiment_name": "crossencoder.experiment",
+    "device": "cpu",
+    "model_name": "CrossEncoder",
+    "retrieval_model": "BERTRetriever",
+    "model_dimension": 768,
+    "index_size_mb": 1.430511474609375e-05,
+    "model_size_mb": 0.0,
+    "load_time": 0.0,
+    "warmup_time": 0.4395008087158203,
+    "index_time": 0.1468656063079834,
+    "average_latency": 0.09627301999971678,
+    "throughput": 10.387126112829346,
+    "average_memory": -0.040625
+  }
+}

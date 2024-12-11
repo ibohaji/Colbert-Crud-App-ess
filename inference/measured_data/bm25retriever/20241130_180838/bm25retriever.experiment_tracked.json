@@ -1,0 +1,28 @@
+{
+  "hardware_info": {
+    "device_type": "cpu",
+    "hardware_specs": {
+      "processor": "x86_64",
+      "physical_cores": 24,
+      "total_cores": 24,
+      "max_frequency": "3700.00MHz",
+      "memory_total": "377.07GB",
+      "memory_available": "365.66GB"
+    }
+  },
+  "experiment": {
+    "experiment_name": "bm25retriever.experiment",
+    "device": "cpu",
+    "model_name": "BM25Retriever",
+    "retrieval_model": null,
+    "model_dimension": 0,
+    "index_size_mb": 0.0,
+    "model_size_mb": 0.0,
+    "load_time": 0.0,
+    "warmup_time": 0.0,
+    "index_time": 0.5378849506378174,
+    "average_latency": 0.010239023257994216,
+    "throughput": 97.66556582623643,
+    "average_memory": 0.0
+  }
+}

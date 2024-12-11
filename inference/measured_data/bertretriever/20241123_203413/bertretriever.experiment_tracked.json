@@ -1,0 +1,28 @@
+{
+  "hardware_info": {
+    "device_type": "cpu",
+    "hardware_specs": {
+      "processor": "AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD",
+      "physical_cores": 8,
+      "total_cores": 16,
+      "max_frequency": "2900.00MHz",
+      "memory_total": "15.42GB",
+      "memory_available": "4.53GB"
+    }
+  },
+  "experiment": {
+    "experiment_name": "bertretriever.experiment",
+    "device": "cpu",
+    "model_name": "BERTRetriever",
+    "retrieval_model": null,
+    "model_dimension": 768,
+    "index_size_mb": 1.430511474609375e-05,
+    "model_size_mb": 0.0,
+    "load_time": 0.0,
+    "warmup_time": 0.09441590309143066,
+    "index_time": 0.1952192783355713,
+    "average_latency": 0.05394082000020717,
+    "throughput": 18.53883570913752,
+    "average_memory": 0.065625
+  }
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panosc Portal</title>
+    <style>
+        /* Resetting default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #ecf0f1;
+        }
+
+        /* Main Content Styling */
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .landing-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .landing-container h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #34495e;
+        }
+
+        .landing-container p {
+            font-size: 1em;
+            margin-bottom: 30px;
+            color: #7f8c8d;
+        }
+
+        .landing-container a {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #2980b9;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .landing-container a:hover {
+            background-color: #3498db;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            .landing-container {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            .landing-container h2 {
+                font-size: 1.5em;
+            }
+
+            .landing-container a {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Panosc Portal</h1>
+        <p>Your Gateway to Scientific Research</p>
+    </header>
+
+    <main>
+        <div class="landing-container">
+            <h2>Welcome to Panosc Portal</h2>
+            <p>Explore a vast repository of scientific documents and find the information you need with our advanced search capabilities.</p>
+            <a href="/search">Start Your Search</a>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2024 Panosc Portal. All rights reserved.
+    </footer>
+</body>
+</html>

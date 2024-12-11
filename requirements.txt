@@ -1,0 +1,9 @@
+colbert-ai==0.2.21
+torch==2.5.1
+transformers==4.46.3
+faiss-cpu==1.9.0.post1
+sentence-transformers==3.3.1
+tqdm==4.67.0
+numpy==1.23.5
+flask==3.1.0
+flask-cors==5.0.0

@@ -1,0 +1,5 @@
+{"_id": "1", "text": "What is machine learning?", "metadata": {"source": "user", "timestamp": "2024-03-20"}}
+{"_id": "2", "text": "How do neural networks work?", "metadata": {"source": "expert", "timestamp": "2024-03-21"}}
+{"_id": "3", "text": "Explain deep learning concepts", "metadata": {"source": "user", "timestamp": "2024-03-22"}}
+{"_id": "4", "text": "What is natural language processing?", "metadata": {"source": "expert", "timestamp": "2024-03-23"}}
+{"_id": "5", "text": "How does computer vision work?", "metadata": {"source": "user", "timestamp": "2024-03-24"}} 

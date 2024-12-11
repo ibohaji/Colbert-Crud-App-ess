@@ -1,0 +1,18 @@
+{
+  "hardware_info": {},
+  "experiment": {
+    "experiment_name": "colbertv2.experiment",
+    "device": "gpu",
+    "model_name": "ColBERTv2",
+    "retrieval_model": null,
+    "model_dimension": 128,
+    "index_size_mb": 0.030792439356446266,
+    "model_size_mb": 0.0,
+    "load_time": 0.0,
+    "warmup_time": 0.0,
+    "index_time": 595.4310126304626,
+    "average_latency": 1.666019670665264e-07,
+    "throughput": 6002330.090140452,
+    "average_memory": 0.0
+  }
+}

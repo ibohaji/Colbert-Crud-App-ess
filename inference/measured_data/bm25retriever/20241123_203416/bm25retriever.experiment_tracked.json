@@ -1,0 +1,28 @@
+{
+  "hardware_info": {
+    "device_type": "cpu",
+    "hardware_specs": {
+      "processor": "AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD",
+      "physical_cores": 8,
+      "total_cores": 16,
+      "max_frequency": "2900.00MHz",
+      "memory_total": "15.42GB",
+      "memory_available": "4.04GB"
+    }
+  },
+  "experiment": {
+    "experiment_name": "bm25retriever.experiment",
+    "device": "cpu",
+    "model_name": "BM25Retriever",
+    "retrieval_model": null,
+    "model_dimension": 73,
+    "index_size_mb": 0.0023260116577148438,
+    "model_size_mb": 0.0,
+    "load_time": 0.0,
+    "warmup_time": 0.001791238784790039,
+    "index_time": 0.0,
+    "average_latency": 0.00022099999951024073,
+    "throughput": 4524.88688785568,
+    "average_memory": 0.0
+  }
+}

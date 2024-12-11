@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panosc Portal Search</title>
+    <style>
+        /* Resetting default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        /* Main Content Styling */
+        main {
+            flex: 1;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .search-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .search-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #34495e;
+        }
+
+        .search-container label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+            color: #34495e;
+        }
+
+        .search-container input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+            font-size: 1em;
+            background-color: #ecf0f1;
+            color: #34495e;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-container input[type="text"]:focus {
+            border-color: #2980b9;
+            outline: none;
+        }
+
+        .search-container button {
+            width: 100%;
+            background-color: #2980b9;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-container button:hover {
+            background-color: #3498db;
+        }
+
+        /* Results Styling */
+        #results {
+            margin-top: 30px;
+        }
+
+        .result-item {
+            background-color: #ecf0f1;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .result-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .result-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .badge {
+            background-color: #2980b9;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            margin-right: 15px;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 1.2em;
+            color: #2c3e50;
+            flex: 1;
+        }
+
+        .score {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-top: 10px;
+        }
+
+        .progress-bar-container {
+            background-color: #bdc3c7;
+            border-radius: 5px;
+            overflow: hidden;
+            height: 20px;
+            margin-top: 5px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: #2980b9;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Loading Indicator Styling */
+        #loading {
+            font-style: italic;
+            color: #2980b9;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .search-container {
+                padding: 20px;
+            }
+
+            .result-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .badge {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Panosc Portal</h1>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <h2>Search Documents</h2>
+            <label for="query">Enter your search query:</label>
+            <input type="text" id="query" placeholder="Enter search term">
+            <button onclick="searchDocuments()">Search</button>
+            <div id="results"></div>
+        </div>
+    </main>
+
+    <script>
+        async function searchDocuments() {
+            const query = document.getElementById('query').value.trim();
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '';
+
+            if (!query) {
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'error';
+                errorDiv.textContent = 'Please enter a search query.';
+                resultsDiv.appendChild(errorDiv);
+                return;
+            }
+
+            // Show loading indicator
+            const loadingDiv = document.createElement('div');
+            loadingDiv.id = 'loading';
+            loadingDiv.textContent = 'Loading...';
+            resultsDiv.appendChild(loadingDiv);
+
+            // Use a relative URL for the search endpoint
+            const apiUrl = `/search?query=${encodeURIComponent(query)}`;
+
+            try {
+                const response = await fetch(apiUrl);
+                loadingDiv.remove(); // Remove loading indicator
+
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log(data); // Debug: Log the received data
+
+                    // Check if data contains an error
+                    if (data.error) {
+                        const errorDiv = document.createElement('div');
+                        errorDiv.className = 'error';
+                        errorDiv.textContent = `Error: ${data.error}`;
+                        resultsDiv.appendChild(errorDiv);
+                        return;
+                    }
+
+                    if (!Array.isArray(data)) {
+                        const errorDiv = document.createElement('div');
+                        errorDiv.className = 'error';
+                        errorDiv.textContent = 'Unexpected response format.';
+                        resultsDiv.appendChild(errorDiv);
+                        return;
+                    }
+
+                    if (data.length === 0) {
+                        const noResultsDiv = document.createElement('div');
+                        noResultsDiv.className = 'error';
+                        noResultsDiv.textContent = 'No results found.';
+                        resultsDiv.appendChild(noResultsDiv);
+                        return;
+                    }
+
+                    data.forEach(result => {
+                        const resultItem = document.createElement('div');
+                        resultItem.className = 'result-item';
+
+                        // Result Header
+                        const resultHeader = document.createElement('div');
+                        resultHeader.className = 'result-header';
+
+                        const badge = document.createElement('div');
+                        badge.className = 'badge';
+                        badge.textContent = `Rank ${result.rank}`;
+
+                        const title = document.createElement('div');
+                        title.className = 'title';
+                        title.textContent = result.title;
+
+                        resultHeader.appendChild(badge);
+                        resultHeader.appendChild(title);
+
+                        // Score and Progress Bar
+                        const scoreDiv = document.createElement('div');
+                        scoreDiv.className = 'score';
+                        scoreDiv.textContent = `Score: ${result.score.toFixed(4)}`;
+
+                        const progressBarContainer = document.createElement('div');
+                        progressBarContainer.className = 'progress-bar-container';
+
+                        const progressBar = document.createElement('div');
+                        progressBar.className = 'progress-bar';
+                        // Assuming score is between 0 and 1, convert to percentage
+                        progressBar.style.width = `${result.score * 100}%`;
+
+                        progressBarContainer.appendChild(progressBar);
+
+                        resultItem.appendChild(resultHeader);
+                        resultItem.appendChild(scoreDiv);
+                        resultItem.appendChild(progressBarContainer);
+
+                        resultsDiv.appendChild(resultItem);
+                    });
+                } else {
+                    const errorDiv = document.createElement('div');
+                    errorDiv.className = 'error';
+                    errorDiv.textContent = `Error: ${response.status}`;
+                    resultsDiv.appendChild(errorDiv);
+                }
+            } catch (error) {
+                loadingDiv.remove(); // Remove loading indicator
+                console.error('Fetch error:', error); // Debug: Log the error
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'error';
+                errorDiv.textContent = `Error: ${error.message}`;
+                resultsDiv.appendChild(errorDiv);
+            }
+        }
+    </script>
+</body>
+</html>

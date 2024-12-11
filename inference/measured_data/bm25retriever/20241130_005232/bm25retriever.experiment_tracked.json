@@ -1,0 +1,18 @@
+{
+  "hardware_info": {},
+  "experiment": {
+    "experiment_name": "bm25retriever.experiment",
+    "device": "gpu",
+    "model_name": "BM25Retriever",
+    "retrieval_model": null,
+    "model_dimension": 73,
+    "index_size_mb": 0.0023260116577148438,
+    "model_size_mb": 0.0,
+    "load_time": 0.0,
+    "warmup_time": 0.0,
+    "index_time": 0.0,
+    "average_latency": 1.2760004028677941e-05,
+    "throughput": 78369.88121261664,
+    "average_memory": 0.0
+  }
+}

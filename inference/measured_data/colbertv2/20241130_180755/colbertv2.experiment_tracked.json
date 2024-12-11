@@ -1,0 +1,27 @@
+{
+  "hardware_info": {
+    "device_type": "gpu",
+    "hardware_specs": {
+      "name": "Tesla V100-PCIE-32GB",
+      "compute_capability": "7.0",
+      "memory_total": "31.73GB",
+      "memory_allocated": "0.00GB",
+      "memory_cached": "0.00GB"
+    }
+  },
+  "experiment": {
+    "experiment_name": "colbertv2.experiment",
+    "device": "cuda",
+    "model_name": "ColBERTv2",
+    "retrieval_model": null,
+    "model_dimension": 128,
+    "index_size_mb": 0.0,
+    "model_size_mb": 0.0,
+    "load_time": 0.0,
+    "warmup_time": 0.0,
+    "index_time": 587.6867067813873,
+    "average_latency": 0.022714114408667985,
+    "throughput": 44.02548926223545,
+    "average_memory": 0.0
+  }
+}

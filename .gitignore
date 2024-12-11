@@ -1,0 +1,21 @@
+__pycache__/* 
+*.log
+*.log.*
+myenv/*
+*.pt
+*.pth
+*.bin
+*.index
+*.faiss
+
+
+# IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+
+# Environment variables
+.env
+.env.*
