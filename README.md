@@ -2,7 +2,7 @@
 # ColBERT CRUD Application
 
 ## About the Project
-[Your description of what this project does and its significance]
+[Detailed description of the project yet to come]
 
 This project implements a CRUD (Create, Read, Update, Delete) application using ColBERT (Contextualized Late Interaction over BERT) for efficient document retrieval and search. The application includes a data portal interface for easy interaction with the ColBERT system.
 
